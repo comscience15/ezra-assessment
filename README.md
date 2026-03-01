@@ -42,5 +42,6 @@
 - Can find it at `playwright-report` directory
 - See screenshots below
 
- -- ![Local Test Result](https://github.com/comscience15/ezra-assessment/blob/main/local_test_result.png)
- -- ![Playwright Test Result](https://github.com/comscience15/ezra-assessment/blob/main/playwright_test_result.png)
+ ![Local Test Result](https://github.com/comscience15/ezra-assessment/blob/main/local_test_result.png)
+ 
+ ![Playwright Test Result](https://github.com/comscience15/ezra-assessment/blob/main/playwright_test_result.png)
