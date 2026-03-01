@@ -27,8 +27,12 @@
 3. Configure environment:
    cp .env.example .env
 4. Run tests:
-   npm test
-5. View HTML report:
+   - npm test
+   
+   OR
+
+   - npx playwright test -g p0_test_cases --headed // using tag to run all or each test case
+6. View HTML report:
    npm run report
 
 ## Scalability / What I’d add next
