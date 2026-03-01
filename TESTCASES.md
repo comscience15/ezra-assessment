@@ -57,25 +57,25 @@ Stripe testing:
    - If only 1 time selected: Continue blocked / error
 
 10) **Location selection affects available times**
-   - Switching centers changes available time slots; time zone display is correct
+    - Switching centers changes available time slots; time zone display is correct
 
 11) **Back navigation preserves or correctly resets state**
-   - From Payment back to Schedule and forward again: selections consistent; no ghost times
+    - From Payment back to Schedule and forward again: selections consistent; no ghost times
 
 12) **Promo code behavior**
-   - Valid promo reduces total; invalid promo shows error; total never negative; total recalculates correctly
+    - Valid promo reduces total; invalid promo shows error; total never negative; total recalculates correctly
 
 ### P2 (Important quality + privacy hygiene)
 
 13) **Session timeout mid-booking**
-   - Redirect to sign-in; resume does not leak cross-user state
+    - Redirect to sign-in; resume does not leak cross-user state
 
 14) **Payment method switching (Card ↔ Affirm ↔ Bank)**
-   - Switching methods updates UI correctly; does not carry invalid state; correct method is used on submit
+    - Switching methods updates UI correctly; does not carry invalid state; correct method is used on submit
 
 15) **Sensitive data handling + notifications**
-   - No card details in app logs; Stripe Elements used (no PAN/CVC posted to Ezra APIs)
-   - Confirmation/receipt sent once; contains no medical data; minimal PII; amount matches UI
+    - No card details in app logs; Stripe Elements used (no PAN/CVC posted to Ezra APIs)
+    - Confirmation/receipt sent once; contains no medical data; minimal PII; amount matches UI
 
 ---
 
@@ -88,7 +88,7 @@ Core revenue flow and highest traffic path. Validates eligibility fields → sch
 Worst trust failure: money taken but appointment not reserved. Leads to refunds, chargebacks, support load, and reputational damage. Classic failure mode when transaction boundaries and reconciliation are weak.
 
 ### #3 Double-submit / idempotency
-Payment pages are prone to rapid clicks, refreshes, and flaky networks. Without idempotency, risk duplicate charges and duplicate appointments. This validates resilience under real-world behavior.
+Payment pages often have issues like users clicking twice, refreshing the page, or slow internet. Without a way to prevent duplicates, you risk charging the customer twice or booking the same appointment more than once. This test makes sure the system handles those real-world situations reliably.
 
 ---
 
